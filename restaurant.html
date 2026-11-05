@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam's Pizza | Restaurant</title>
+    <meta name="view-transition" content="same-origin">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-entering">
+
+    <nav class="navbar">
+        <h2>SAM'S PIZZA</h2>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="#pizza-menu">MENU</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
+
+    <main>
+    <section class="trending-meal">
+
+        <div class="meal-image">
+            <img src="trending-pizza.png" alt="Today's trending meal">
+        </div>
+
+        <div class="meal-details">
+            <p class="section-label">TODAY'S SPECIAL</p>
+
+            <h1>Sam's Signature Pepperoni Pizza</h1>
+
+            <p class="meal-description">
+                A golden, crispy pan crust topped with melted mozzarella, rich tomato sauce and perfectly seasoned pepperoni.
+            </p>
+
+            <p class="meal-price">$10.99</p>
+
+            <button class="order-button">ORDER NOW</button>
+        </div>
+
+    </section>
+
+    <section class="coming-soon-banner">
+    <img src="Pizza Banner.png" alt="Coming Soon Pizza">
+    </section>
+
+    <section class="pizza-menu" id="pizza-menu">
+
+    <h2>OUR PIZZA COLLECTION</h2>
+
+    <div class="pizza-carousel">
+
+        <div class="pizza-card">
+            <div class="wooden-plate">
+                <img src="chocolate pizza.png" alt="Chocolate Pizza">
+            </div>
+            <h3>Chocolate Dessert</h3>
+            <p>$12.99</p>
+        </div>
+
+        <div class="pizza-card">
+            <div class="wooden-plate">
+               <img src="mushroom pizza.png" alt="Mushroom Pizza">  
+            </div>
+        <h3>Classic Mushroom</h3>
+        <p>$9.99</p>
+    </div>
+
+    <div class="pizza-card">
+          <div class="wooden-plate">
+               <img src="bbq chicken pizza.png" alt="BBQ Chicken Pizza">
+          </div>
+    <h3>BBQ Chicken</h3>
+    <p>$13.99</p>
+    </div>
+
+    <div class="pizza-card">
+          <div class="wooden-plate">
+               <img src="double cheese pizza.png" alt="Double Cheese Pizza">
+          </div>
+    <h3>Double Cheese</h3>
+    <p>$15.99</p>
+    </div>
+
+    </div>
+
+    </section>
+
+    <section class="about-section" id="about">
+    <h2>ABOUT US</h2>
+    <p>
+        Welcome to Sam's Pizza, where every slice becomes a memory.
+        We believe great pizza brings people together.
+    </p>
+    </section>
+
+    <section class="contact-section" id="contact">
+    <h2>CONTACT US</h2>
+    <p>Phone: +94 11 234 5678</p>
+    <p>Email: samspizza@gmail.com</p>
+    <p>Location: 123,Pizza Street,Food City</p>
+</section>
+
+<footer class="footer">
+    <h2>SAM'S PIZZA</h2>
+    <p>Where Every Slice Becomes A Memory.</p>
+    <p class="copyright">© 2026 Sam's Pizza. All Rights Reserved.</p>
+</footer>
+
+
+</main>
+
+<script>
+    const pizzaSection = document.querySelector(".pizza-menu");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+revealObserver.observe(pizzaSection);
+    const carousel = document.querySelector(".pizza-carousel");
+    const cards = document.querySelectorAll(".pizza-card");
+
+    function updateCenterPizza() {
+        const center = carousel.getBoundingClientRect().left
+            + carousel.clientWidth / 2;
+
+        let closestCard = null;
+        let closestDistance = Infinity;
+
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const cardCenter = rect.left + rect.width / 2;
+            const distance = Math.abs(center - cardCenter);
+
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestCard = card;
+            }
+        });
+
+        cards.forEach(card => {
+            card.classList.toggle("active", card === closestCard);
+        });
+    }
+
+    carousel.addEventListener("scroll", updateCenterPizza);
+    window.addEventListener("resize", updateCenterPizza);
+
+    updateCenterPizza();
+
+    
+</script>
+
+
+</body>
+</html>
