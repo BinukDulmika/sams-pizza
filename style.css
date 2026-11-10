@@ -680,18 +680,20 @@ html {
         text-align: center;
     }
 
-    .meal-image,
-    .meal-details {
-        width: 100%;
-        max-width: 100%;
+    .meal-image {
+    width: 100%;
+    max-width: 340px;
+    animation: fadeUp 1s ease-out both;
     }
 
     .meal-image img {
-        width: 100%;
-        max-width: 340px;
-        height: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 340px;
+    object-fit: contain;
     }
-
+    
     .meal-details h1 {
         font-size: 40px;
         margin: 15px 0;
