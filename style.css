@@ -508,3 +508,73 @@ html {
 .pizza-menu.show .pizza-card:nth-child(4) {
     transition-delay: 0.9s;
 }
+
+/* Welcome Page Entrance Animation */
+
+.intro > p:first-child {
+    animation: welcomeFade 1s ease-out both;
+}
+
+.restaurant-divider {
+    animation: dividerReveal 1.2s ease-out 0.4s both;
+}
+
+.intro h1 {
+    animation: titleReveal 1.3s ease-out 0.7s both;
+}
+
+.intro > p:nth-of-type(2) {
+    animation: welcomeFade 1s ease-out 1.2s both;
+}
+
+.hero-button {
+    animation: buttonReveal 1s ease-out 1.6s both;
+}
+
+/* Animation Keyframes */
+
+@keyframes welcomeFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dividerReveal {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+        letter-spacing: 18px;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        letter-spacing: 8px;
+    }
+}
+
+@keyframes buttonReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
