@@ -596,3 +596,220 @@ html {
         font-size: 12px;
     }
 }
+
+
+/* =================================
+   COMPLETE MOBILE RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Welcome Page */
+
+    .intro {
+        min-height: 100svh;
+        padding: 20px;
+        background-position: center;
+    }
+
+    .intro > p:first-child {
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+
+    .intro h1 {
+        font-size: clamp(32px, 9vw, 48px);
+        letter-spacing: 4px;
+        animation-name: mobileTitleReveal;
+    }
+
+    .intro > p:nth-of-type(2) {
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin-bottom: 28px;
+    }
+
+    .restaurant-divider {
+        gap: 12px;
+    }
+
+    .divider-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .hero-button {
+        padding: 14px 24px;
+        font-size: 11px;
+    }
+
+    /* Navigation */
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 5%;
+    }
+
+    .navbar h2 {
+        font-size: 23px;
+        margin: 5px 0;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    /* Trending Meal */
+
+    .trending-meal {
+        min-height: auto;
+        flex-direction: column;
+        gap: 20px;
+        padding: 55px 7%;
+        text-align: center;
+    }
+
+    .meal-image,
+    .meal-details {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .meal-image img {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+    }
+
+    .meal-details h1 {
+        font-size: 40px;
+        margin: 15px 0;
+    }
+
+    .meal-description {
+        font-size: 14px;
+    }
+
+    .meal-price {
+        font-size: 22px;
+    }
+
+    .order-button {
+        padding: 14px 25px;
+        font-size: 12px;
+    }
+
+    /* Pizza Collection */
+
+    .pizza-menu {
+        padding: 55px 0;
+    }
+
+    .pizza-menu h2 {
+        font-size: 25px;
+        letter-spacing: 3px;
+        margin: 0 15px 30px;
+    }
+
+    .pizza-carousel {
+        gap: 20px;
+        padding: 35px calc(50% - 125px);
+    }
+
+    .pizza-card {
+        flex: 0 0 250px;
+    }
+
+    .wooden-plate {
+        width: 230px;
+        height: 230px;
+        margin: auto;
+    }
+
+    .pizza-card h3 {
+        font-size: 18px;
+    }
+
+    .pizza-card p {
+        font-size: 18px;
+    }
+
+    .pizza-menu.show .pizza-card.active {
+        transform: translateY(0) scale(1.05);
+    }
+
+    /* Coming Soon Banner */
+
+    .coming-soon-banner {
+        padding: 20px 5%;
+    }
+
+    .coming-soon-banner img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        animation: none;
+    }
+
+    /* About and Contact */
+
+    .about-section,
+    .contact-section {
+        padding: 45px 7%;
+    }
+
+    .about-section h2,
+    .contact-section h2 {
+        font-size: 25px;
+        letter-spacing: 2px;
+    }
+
+    .about-section p,
+    .contact-section p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 30px 7%;
+    }
+
+    .footer h2 {
+        font-size: 21px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+
+}
+
+/* Mobile Title Animation */
+
+@keyframes mobileTitleReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+        letter-spacing: 12px;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        letter-spacing: 4px;
+    }
+}
+
